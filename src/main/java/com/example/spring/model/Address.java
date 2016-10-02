@@ -13,8 +13,8 @@ public class Address {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="id", nullable=false, unique=true, length=11)
-	private int id;
+	@Column(name="addressId", nullable=false, unique=true, length=11)
+	private int addressId;
 	
 	@Column(name="line1", length=40, nullable=true)
 	private String line1;
@@ -31,21 +31,21 @@ public class Address {
 	public Address() {
 	}
 	
-	public Address(int id, String line1, String city, String state, String zipCode) {
+	public Address(int addressId, String line1, String city, String state, String zipCode) {
 		super();
-		this.id = id;
+		this.addressId = addressId;
 		this.line1 = line1;
 		this.city = city;
 		this.state = state;
 		this.zipCode = zipCode;
 	}
 
-	public int getId() {
-		return id;
+	public int getAddressId() {
+		return addressId;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setAddressId(int addressId) {
+		this.addressId = addressId;
 	}
 
 	public String getLine1() {
@@ -82,7 +82,7 @@ public class Address {
 
 	@Override
 	public String toString() {
-		return "Address [id=" + id + ", line1=" + line1 + ", city=" + city + ", state=" + state + ", zipCode=" + zipCode
+		return "Address [id=" + addressId + ", line1=" + line1 + ", city=" + city + ", state=" + state + ", zipCode=" + zipCode
 				+ "]";
 	}
 
