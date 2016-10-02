@@ -2,6 +2,7 @@ package com.example.spring.model;
 
 public class Person {
 	
+	private int id;
 	private String firstName;
 	private String lastName;
 	private Address address;
@@ -10,13 +11,20 @@ public class Person {
 	
 	public Person() {
 	}
-	public Person(String firstName, String lastName, Address address, String gender, int age) {
+	public Person(int id, String firstName, String lastName, Address address, String gender, int age) {
 		super();
+		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.address = address;
 		this.gender = gender;
 		this.age = age;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 	public String getFirstName() {
 		return firstName;
@@ -48,10 +56,9 @@ public class Person {
 	public void setAge(int age) {
 		this.age = age;
 	}
-	
 	@Override
 	public String toString() {
-		return "Person [firstName=" + firstName + ", lastName=" + lastName + ", address=" + address + ", gender="
-				+ gender + ", age=" + age + "]";
+		return "Person [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", address=" + address
+				+ ", gender=" + gender + ", age=" + age + "]";
 	}
 }
